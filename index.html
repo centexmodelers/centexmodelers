@@ -6,31 +6,67 @@
     <title>Cen-Tex Modelers - RC Flying Club | Salado, TX</title>
     <style>
         :root {
-            --primary: #1a365d;
-            --secondary: #2b6cb0;
-            --text: #2d3748;
-            --light: #f7fafc;
+            --primary: #0f2d59;
+            --secondary: #1d70b8;
+            --accent: #f39c12;
+            --dark: #1a252f;
+            --light: #f4f6f9;
+            --white: #ffffff;
         }
         * { box-sizing: border-box; margin: 0; padding: 0; }
-        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; color: var(--text); line-height: 1.6; background-color: var(--light); }
-        header { background: linear-gradient(rgba(26, 54, 93, 0.85), rgba(26, 54, 93, 0.95)), url('https://images.unsplash.com/photo-1569263979104-865ab7cd8d13?auto=format&fit=crop&w=1200&q=80') center/cover; color: white; text-align: center; padding: 5rem 1rem; }
-        header h1 { font-size: 2.5rem; margin-bottom: 0.5rem; text-transform: uppercase; letter-spacing: 1px; }
-        header p { font-size: 1.2rem; max-width: 600px; margin: 0 auto 1.5rem; opacity: 0.9; }
-        .tag { display: inline-block; background-color: #ecc94b; color: #744210; padding: 0.25rem 0.75rem; font-weight: bold; border-radius: 4px; font-size: 0.9rem; margin-bottom: 1rem; }
-        .container { max-width: 960px; margin: 0 auto; padding: 3rem 1rem; }
-        .grid { display: grid; grid-template-columns: 1fr; gap: 2rem; }
-        @media (min-width: 768px) { .grid { grid-template-columns: 2fr 1fr; } }
-        .card { background: white; padding: 2rem; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); margin-bottom: 2rem; }
-        h2 { color: var(--primary); margin-bottom: 1rem; border-bottom: 2px solid #e2e8f0; padding-bottom: 0.5rem; }
-        h3 { color: var(--secondary); margin: 1.5rem 0 0.5rem; }
-        ul { list-style-position: inside; margin-bottom: 1rem; }
-        li { margin-bottom: 0.5rem; }
-        .btn { display: inline-block; background-color: var(--secondary); color: white; padding: 0.75rem 1.5rem; text-decoration: none; border-radius: 5px; font-weight: bold; transition: background 0.2s; }
-        .btn:hover { background-color: var(--primary); }
-        .btn-paypal { background-color: #0079c1; }
-        .btn-paypal:hover { background-color: #00457c; }
-        footer { background-color: var(--primary); color: #a0aec0; text-align: center; padding: 2rem 1rem; font-size: 0.9rem; }
-        .contact-box { background: #edf2f7; border-left: 4px solid var(--secondary); padding: 1rem; margin-top: 1rem; border-radius: 0 4px 4px 0; }
+        html { scroll-behavior: smooth; }
+        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; color: var(--dark); line-height: 1.6; background-color: var(--light); }
+        
+        /* Hero Section */
+        header { 
+            background: linear-gradient(rgba(15, 45, 89, 0.85), rgba(26, 37, 47, 0.9)), url('https://images.unsplash.com/photo-1569263979104-865ab7cd8d13?auto=format&fit=crop&w=1200&q=80') center/cover no-repeat; 
+            color: var(--white); 
+            text-align: center; 
+            padding: 6rem 1rem; 
+        }
+        header h1 { font-size: 3rem; margin-bottom: 0.5rem; text-transform: uppercase; letter-spacing: 1px; font-weight: 800; text-shadow: 2px 2px 4px rgba(0,0,0,0.5); }
+        header p { font-size: 1.3rem; max-width: 700px; margin: 0 auto 2rem; opacity: 0.95; }
+        .tag { display: inline-block; background-color: var(--accent); color: var(--dark); padding: 0.35rem 1rem; font-weight: bold; border-radius: 4px; font-size: 0.95rem; margin-bottom: 1.5rem; text-transform: uppercase; letter-spacing: 0.5px; }
+        
+        /* Main Container */
+        .container { max-width: 1140px; margin: 0 auto; padding: 4rem 1rem; }
+        .grid { display: grid; grid-template-columns: 1fr; gap: 2.5rem; }
+        @media (min-width: 768px) { .grid { grid-template-columns: 3fr 2fr; } }
+        
+        /* Cards */
+        .card { background: var(--white); padding: 2.5rem; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); margin-bottom: 2.5rem; border-top: 4px solid var(--secondary); }
+        .card-accent { border-top-color: var(--accent); }
+        
+        h2 { color: var(--primary); margin-bottom: 1.25rem; font-size: 1.8rem; font-weight: 700; display: flex; align-items: center; }
+        h3 { color: var(--secondary); margin: 1.5rem 0 0.5rem; font-size: 1.3rem; }
+        p { margin-bottom: 1rem; color: #4a5568; }
+        
+        ul { list-style-type: none; margin-bottom: 1.5rem; }
+        li { margin-bottom: 0.75rem; padding-left: 1.5rem; position: relative; }
+        li::before { content: "✓"; position: absolute; left: 0; color: var(--accent); font-weight: bold; }
+        
+        /* Buttons & CTAs */
+        .btn { display: inline-block; background-color: var(--secondary); color: var(--white); padding: 0.85rem 1.75rem; text-decoration: none; border-radius: 5px; font-weight: bold; transition: all 0.2s ease; text-align: center; border: none; cursor: pointer; width: 100%; box-shadow: 0 4px 6px rgba(0,0,0,0.1); margin-bottom: 0.5rem; }
+        .btn:hover { background-color: var(--primary); transform: translateY(-1px); }
+        .btn-accent { background-color: var(--accent); color: var(--dark); }
+        .btn-accent:hover { background-color: #e08e0b; color: var(--dark); }
+        .btn-fb { background-color: #1877f2; color: var(--white); }
+        .btn-fb:hover { background-color: #135cb4; }
+        
+        /* Map Layout */
+        .map-container { position: relative; width: 100%; height: 350px; margin: 1.5rem 0; border-radius: 6px; overflow: hidden; box-shadow: 0 2px 8px rgba(0,0,0,0.1); border: 1px solid #e2e8f0; }
+        .map-container iframe { width: 100%; height: 100%; border: 0; }
+        
+        /* Membership Pricing Table */
+        .price-list { margin: 1.5rem 0; background: var(--light); padding: 1rem; border-radius: 6px; }
+        .price-row { display: flex; justify-content: space-between; padding: 0.5rem 0; border-bottom: 1px solid #e2e8f0; }
+        .price-row:last-child { border-bottom: none; }
+        .price-name { font-weight: 600; }
+        .price-cost { font-weight: 700; color: var(--primary); }
+        
+        /* Footer */
+        footer { background-color: var(--dark); color: #a0aec0; text-align: center; padding: 3rem 1rem; font-size: 0.95rem; margin-top: 4rem; }
+        footer p { color: #a0aec0; margin-bottom: 0.5rem; }
     </style>
 </head>
 <body>
@@ -38,7 +74,8 @@
     <header>
         <div class="tag">AMA Chartered Club #1272</div>
         <h1>Cen-Tex Modelers, Inc.</h1>
-        <p>Advancing the enjoyment of building and flying model aircraft in Central Texas since 1972.</p>
+        <p>Building, flying, and advancing the sport of radio-controlled aviation in Central Texas since 1972.</p>
+        <a href="#membership" class="btn btn-accent" style="width: auto; display: inline-block;">Join Our Club Today</a>
     </header>
 
     <div class="container">
@@ -46,61 +83,77 @@
             
             <main>
                 <section class="card">
-                    <h2>About Our Club</h2>
-                    <p>Welcome to Cen-Tex Modelers! Whether you are a veteran pilot or brand new to the hobby, you are welcome at our field. We fly small and large-scale radio-controlled aircraft, including electric, gas, and glow-powered models, helicopters, and park flyers.</p>
+                    <h2>About Cen-Tex Modelers</h2>
+                    <p>Welcome to Central Texas' premier radio-control flying club! We are a group of aviation enthusiasts dedicated to the construction and safe operation of model aircraft. From small electric park flyers and scale gas planes to high-performance sport jets and helicopters, our members fly it all.</p>
+                    <p>Whether you're a seasoned pilot looking for an excellent local field or a beginner eager to learn your first maneuvers, you'll find a welcoming community and plenty of support here.</p>
                     
-                    <h3>Hall Field & Facilities</h3>
-                    <p>Our flying site, <strong>Hall Field</strong>, is leased from the US Army Corps of Engineers and beautifully situated adjacent to Stillhouse Hollow Lake. Maintained proudly by our members, our facilities include:</p>
-                    <br>
+                    <h3>Our Flying Site Facilities</h3>
                     <ul>
-                        <li>30' x 300' Geo-Tex all-weather runway & intersecting grass runway</li>
-                        <li>The covered John H. Brian Pavilion for shade, picnics, and pit setup</li>
-                        <li>Startup stands, setup tables, safety fences, and a spectator viewing area</li>
-                        <li>Open daily from 08:00 AM until dusk</li>
+                        <li>30' x 300' Geo-Tex all-weather runway and intersecting manicured grass runway</li>
+                        <li>The covered John H. Brian Pavilion equipped with setup tables and sun shade</li>
+                        <li>Heavy-duty startup stands and pilot safety barriers</li>
+                        <li>Spectator viewing areas (Visitors are always welcome to watch!)</li>
+                        <li>Open daily from 8:00 AM until dusk</li>
                     </ul>
                 </section>
 
                 <section class="card">
-                    <h2>Flight Training Program</h2>
-                    <p>Want to learn how to fly? Technology has made getting started easier than ever. We offer a structured training environment with club flight instructors to help you take your first steps without losing an aircraft.</p>
-                    <div class="contact-box">
-                        <strong>Ready to fly?</strong> Email us at <a href="mailto:centexmodelers@gmail.com">centexmodelers@gmail.com</a> to be paired up with an instructor.
+                    <h2>Flight Field Location</h2>
+                    <p>Our beautiful facilities at <strong>Hall Field</strong> are leased proudly from the US Army Corps of Engineers and are located directly adjacent to Stillhouse Hollow Lake.</p>
+                    <p><strong>Field Coordinates:</strong> 31°00'32.6"N 97°37'28.9"W</p>
+                    
+                    <div class="map-container">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3419.6455122114755!2d-97.62687612347313!3d31.00906717112521!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x86454900d6fd28e9%3A0x9e3a49ba9e2b8343!2sCen-Tex%20Modelers!5e0!3m2!1sen!2sus!4v1716220000000!5m2!1sen!2sus" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                     </div>
+
+                    <a href="https://maps.app.goo.gl/ChIJ6Sj91gBJRYYRQ4Mr3rpJ-p4" target="_blank" class="btn btn-accent">Open Directly in Google Maps</a>
                 </section>
             </main>
 
             <aside>
-                <div class="card">
-                    <h2>Field Location</h2>
-                    <p><strong>Hall Field</strong><br>
-                    8680 Union Grove Lane<br>
-                    Salado, TX 76571</p>
-                    <br>
-                    <a class="btn" href="https://maps.google.com/?q=8680+Union+Grove+LN,+Salado,+TX,+76571" target="_blank">Get Directions</a>
-                </div>
+                <section class="card card-accent" id="membership">
+                    <h2>Club Membership</h2>
+                    <p>Annual renewals and brand new memberships open every year on April 1st. To maintain safety standards, an active Academy of Model Aeronautics (AMA) membership is required to pilot aircraft at Hall Field.</p>
+                    
+                    <div class="price-list">
+                        <div class="price-row">
+                            <span class="price-name">Full Member</span>
+                            <span class="price-cost">$80 / yr</span>
+                        </div>
+                        <div class="price-row">
+                            <span class="price-name">Senior Member (65+)</span>
+                            <span class="price-cost">$70 / yr</span>
+                        </div>
+                        <div class="price-row">
+                            <span class="price-name">Associate Member</span>
+                            <span class="price-cost">$40 / yr</span>
+                        </div>
+                        <div class="price-row">
+                            <span class="price-name">Junior Member (Under 18)</span>
+                            <span class="price-cost">Free</span>
+                        </div>
+                    </div>
+                    
+                    <p style="font-size: 0.85rem; color: #718096; margin-bottom: 1.5rem;">Click below to access our digital application form and submit your enrollment details directly online.</p>
+                    
+                    <a href="https://forms.gle/6oRfg9Qvm2igWHfR8" target="_blank" class="btn">Fill Out Enrollment Form</a>
+                </section>
 
-                <div class="card">
-                    <h2>Membership</h2>
-                    <p>Annual renewals and new memberships begin April 1st. AMA membership is required to fly at Hall Field.</p>
+                <section class="card">
+                    <h2>Join Our Community</h2>
+                    <p>Want to see what we've been building, coordinate flight times, or talk shop? Our Facebook group is the most active hub for daily flight updates, project photos, and club announcements.</p>
                     <br>
-                    <ul>
-                        <li>Full Member: $80</li>
-                        <li>Senior (65+): $70</li>
-                        <li>Associate: $40</li>
-                        <li>Junior (Under 18): $0</li>
-                    </ul>
-                    <br>
-                    <p style="font-size:0.85rem; margin-bottom:1rem; color:#718096;">Please contact a board member or email us directly to submit your registration details.</p>
-                    <a class="btn btn-paypal" href="https://www.paypal.com" target="_blank">Pay via PayPal</a>
-                </div>
+                    <a href="https://www.facebook.com/groups/centexmodelers" target="_blank" class="btn btn-fb">Visit Our Facebook Group</a>
+                </section>
             </aside>
 
         </div>
     </div>
 
     <footer>
-        <p>&copy; 2026 Cen-Tex Modelers, Inc. All Rights Reserved.</p>
-        <p style="margin-top: 0.5rem; font-size: 0.8rem;">Hall Field is located at Stillhouse Hollow Lake near Killeen/Salado, TX.</p>
+        <p>© 2026 Cen-Tex Modelers, Inc. All Rights Reserved.</p>
+        <p>Hall Field is located at Stillhouse Hollow Lake near Belton, Killeen, and Salado, TX.</p>
+        <p style="font-size: 0.8rem; opacity: 0.7; margin-top: 1rem;">Contact: <a href="mailto:centexmodelers@gmail.com" style="color: #cbd5e0;">centexmodelers@gmail.com</a></p>
     </footer>
 
 </body>
