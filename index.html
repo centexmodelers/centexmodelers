@@ -73,27 +73,19 @@
 
         /* Window Background Assignments (With Web Fallbacks until you upload group images) */
         .bg-hero {
-            background-image: linear-gradient(rgba(15, 45, 89, 0.8), rgba(26, 37, 47, 0.85)), url('https://centexmodelers.com/parallax-bg1.jpg');
+            background-image: linear-gradient(rgba(15, 45, 89, 0.8), rgba(26, 37, 47, 0.85)), url('https://centexmodelers.com/parallax-bgtop.jpg');
         }
-        .bg-hero:not([style]) {
-            background-image: linear-gradient(rgba(15, 45, 89, 0.8), rgba(26, 37, 47, 0.85)), url('https://images.unsplash.com/photo-1569263979104-865ab7cd8d13?auto=format&fit=crop&w=1600&q=80');
-        }
-
+      
         .bg-middle {
-            background-image: linear-gradient(rgba(26, 37, 47, 0.6), rgba(15, 45, 89, 0.6)), url('https://centexmodelers.com/parallax-bg2.jpg');
+            background-image: linear-gradient(rgba(26, 37, 47, 0.6), rgba(15, 45, 89, 0.6)), url('https://centexmodelers.com/parallax-bg1.jpg');
             height: 400px;
         }
-        .bg-middle:not([style]) {
-            background-image: linear-gradient(rgba(26, 37, 47, 0.6), rgba(15, 45, 89, 0.6)), url('https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1600&q=80');
-        }
-
+       
         .bg-bottom {
-            background-image: linear-gradient(rgba(15, 45, 89, 0.7), rgba(26, 37, 47, 0.85)), url('parallax-bg3.jpg');
+            background-image: linear-gradient(rgba(15, 45, 89, 0.7), rgba(26, 37, 47, 0.85)), url('https://centexmodelers.com/parallax-bg3.jpg');
             height: 400px;
         }
-        .bg-bottom:not([style]) {
-            background-image: linear-gradient(rgba(15, 45, 89, 0.7), rgba(26, 37, 47, 0.85)), url('https://images.unsplash.com/photo-1436491865332-7a61a109cc05?auto=format&fit=crop&w=1600&q=80');
-        }
+       
 
         /* Turn off Parallax effect gracefully for iOS and Mobile devices for better performance */
         @media (max-width: 1024px) {
