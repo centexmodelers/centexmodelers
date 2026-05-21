@@ -17,18 +17,21 @@
         html { scroll-behavior: smooth; }
         body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; color: var(--dark); line-height: 1.6; background-color: var(--light); }
         
-        /* Hero Section with Logo */
+        /* Hero Section with Custom Background Image */
         header { 
-            background: linear-gradient(rgba(15, 45, 89, 0.88), rgba(26, 37, 47, 0.93)), url('https://images.unsplash.com/photo-1569263979104-865ab7cd8d13?auto=format&fit=crop&w=1200&q=80') center/cover no-repeat; 
+            background: linear-gradient(rgba(15, 45, 89, 0.88), rgba(26, 37, 47, 0.93)), url('hero-plane.jpg') center/cover no-repeat; 
             color: var(--white); 
             text-align: center; 
-            padding: 5rem 1rem; 
+            padding: 6rem 1rem; 
         }
-        .logo-container {
-            margin-bottom: 1.5rem;
+        /* Fallback if local image isn't uploaded yet */
+        header:not([style]) {
+            background-image: linear-gradient(rgba(15, 45, 89, 0.88), rgba(26, 37, 47, 0.93)), url('http://googleusercontent.com/image_collection/image_retrieval/5268696727183223865_1');
         }
+        
+        .logo-container { margin-bottom: 1.5rem; }
         .logo-img {
-            max-width: 160px;
+            max-width: 150px;
             height: auto;
             border-radius: 50%;
             border: 4px solid var(--white);
@@ -44,9 +47,23 @@
         .grid { display: grid; grid-template-columns: 1fr; gap: 2.5rem; }
         @media (min-width: 768px) { .grid { grid-template-columns: 3fr 2fr; } }
         
-        /* Cards */
+        /* Cards & Media Box */
         .card { background: var(--white); padding: 2.5rem; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); margin-bottom: 2.5rem; border-top: 4px solid var(--secondary); }
         .card-accent { border-top-color: var(--accent); }
+        
+        .media-box {
+            width: 100%;
+            height: 280px;
+            margin-bottom: 1.5rem;
+            border-radius: 6px;
+            overflow: hidden;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+        .media-box img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
         
         h2 { color: var(--primary); margin-bottom: 1.25rem; font-size: 1.8rem; font-weight: 700; display: flex; align-items: center; }
         h3 { color: var(--secondary); margin: 1.5rem 0 0.5rem; font-size: 1.3rem; }
@@ -56,7 +73,7 @@
         li { margin-bottom: 0.75rem; padding-left: 1.5rem; position: relative; }
         li::before { content: "✓"; position: absolute; left: 0; color: var(--accent); font-weight: bold; }
         
-        /* Buttons & CTAs */
+        /* Buttons */
         .btn { display: inline-block; background-color: var(--secondary); color: var(--white); padding: 0.85rem 1.75rem; text-decoration: none; border-radius: 5px; font-weight: bold; transition: all 0.2s ease; text-align: center; border: none; cursor: pointer; width: 100%; box-shadow: 0 4px 6px rgba(0,0,0,0.1); margin-bottom: 0.5rem; }
         .btn:hover { background-color: var(--primary); transform: translateY(-1px); }
         .btn-accent { background-color: var(--accent); color: var(--dark); }
@@ -84,7 +101,7 @@
 
     <header>
         <div class="logo-container">
-            <img src="http://googleusercontent.com/image_collection/image_retrieval/18317053001837099510_0" alt="Cen-Tex Modelers Logo" class="logo-img">
+            <img src="logo.png" alt="Cen-Tex Modelers Logo" class="logo-img" onerror="this.src='http://googleusercontent.com/image_collection/image_retrieval/18317053001837099510_0'">
         </div>
         <div class="tag">AMA Chartered Club #1272</div>
         <h1>Cen-Tex Modelers, Inc.</h1>
@@ -97,6 +114,10 @@
             
             <main>
                 <section class="card">
+                    <div class="media-box">
+                        <img src="field-photo.jpg" alt="RC Airplanes at the Field" onerror="this.src='http://googleusercontent.com/image_collection/image_retrieval/5268696727183223865_0'">
+                    </div>
+                    
                     <h2>About Cen-Tex Modelers</h2>
                     <p>Welcome to Central Texas' premier radio-control flying club! We are a group of aviation enthusiasts dedicated to the construction and safe operation of model aircraft. From small electric park flyers and scale gas planes to high-performance sport jets and helicopters, our members fly it all.</p>
                     <p>Whether you're a seasoned pilot looking for an excellent local field or a beginner eager to learn your first maneuvers, you'll find a welcoming community and plenty of support here.</p>
